@@ -1,14 +1,29 @@
 package com.natwest.springformula1.domain;
 
+import javax.persistence.Entity;
+
 public class Formula1 {
 	
 	private String trackName;
 	private String country;
-	private double length;
+	private double trackLength;
 	private boolean streetTrack;
+	
+	public Formula1() {}
+	
+	@Entity
+		
+	public FormulaOne(String trackName, String country, double trackLength, boolean streetTrack) {
+		this.trackName = trackName;
+		this.country = country;
+		this.trackLength = trackLength;
+		this.streetTrack = streetTrack;
+	}
+	
 	public String getTrackName() {
 		return trackName;
 	}
+	
 	public void setTrackName(String trackName) {
 		this.trackName = trackName;
 	}
@@ -18,11 +33,11 @@ public class Formula1 {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public double getLength() {
-		return length;
+	public double getTrackLength() {
+		return trackLength;
 	}
 	public void setLength(double length) {
-		this.length = length;
+		this.trackLength = length;
 	}
 	public boolean isStreetTrack() {
 		return streetTrack;
@@ -35,7 +50,7 @@ public class Formula1 {
 		super();
 		this.trackName = trackName;
 		this.country = country;
-		this.length = length;
+		this.trackLength = length;
 		this.streetTrack = streetTrack;
 	}
 	
